@@ -1,10 +1,7 @@
 import { GithubIcon, TwitterIcon, HexagonIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-// import Search from "./search";
-import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
-import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
 
 export const NAVLINKS = [
@@ -65,30 +62,30 @@ export function NavMenu({ isSheet = false }) {
             {NAVLINKS.map((item) => {
                 const Comp = (
                     <Link href={item.href}
-                    className={buttonVariants(
+                        className={buttonVariants(
 
-                        isSheet ? (
-                            {
-                                variant: "outline",
-                                size: "lg2",
-                                className: "py-3 px-6",
-                            }
-                        ) : (
-                            {
-                                variant: "link",
-                                size: "sm",
-                                className: "px-0",
-                            } 
-                        )
-                    )}>
+                            isSheet ? (
+                                {
+                                    variant: "outline",
+                                    size: "lg2",
+                                    className: "py-3 px-6",
+                                }
+                            ) : (
+                                {
+                                    variant: "link",
+                                    size: "sm",
+                                    className: "px-0",
+                                }
+                            )
+                        )}>
                         {item.title}
-                </Link>
+                    </Link>
 
                 );
                 return isSheet ? (
                     <SheetClose key={item.title + item.href} asChild>
                         {Comp}
-                        
+
                     </SheetClose>
                 ) : (
                     Comp
@@ -99,20 +96,20 @@ export function NavMenu({ isSheet = false }) {
                 className={buttonVariants(
 
 
-                isSheet ? (
-                    {
-                        variant: "d5",
-                        size: "lg2",
-                        className: "py-3 px-6",
-                    }
-                ) : (
-                    {
-                        variant: "d5",
-                        className: "px-6",
-                    }
-                )
+                    isSheet ? (
+                        {
+                            variant: "d5",
+                            size: "lg2",
+                            className: "py-3 px-6",
+                        }
+                    ) : (
+                        {
+                            variant: "d5",
+                            className: "px-6",
+                        }
+                    )
                 )}>
-                    Register
+                Register
             </Link>
         </>
     );
